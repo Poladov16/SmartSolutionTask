@@ -1,0 +1,62 @@
+﻿@model IEnumerable<SmartSTask.Models.ViewModels.ManageTaskViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<a class="navbar-brand" style="float:right" asp-controller="Account" asp-action="Login">Log Out</a>
+<h1>Tasks</h1>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Deadline)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AssignedUsers)
+            </th>
+            <th></th>
+            <th>
+                <a asp-controller="User" class="badge"><i class="far fa-plus-square"></i>Users</a>
+            </th>
+            <th>
+                <a asp-action="AddOrEdit" class="btn btn-outline-success"><i class="far fa-plus-square"></i>Create Task</a>
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StatusName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Deadline)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssignedUsers)
+            </td>
+            <td>
+                <a asp-action="AddOrEdit" asp-route-id="@item.TaskId"><i class="fa fa-marker fa-lg"></i>Edit</a> |
+                <a asp-action="Delete" asp-route-id="@item.TaskId" class="text-danger ml-1" onclick="return confirm('Are you sure to Delete this Task?')"><i class="fa fa-trash-alt fa-lg"></i>Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

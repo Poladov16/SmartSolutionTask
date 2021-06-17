@@ -1,0 +1,58 @@
+﻿@model SmartSTask.Models.ViewModels.RegisterViewModel
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="row">
+    <div class="col-md-6 mx-auto">
+        <div class="card">
+            <div class="card-header bg-danger text-white">
+                <h5 class="text-uppercase text-center">Registration Form</h5>
+            </div>
+            <div class="card-body">
+                <form asp-action="Register">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label asp-for="FirstName" class="control-label"></label>
+                            <input asp-for="FirstName" class="form-control" />
+
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label asp-for="LastName" class="control-label"></label>
+                            <input asp-for="LastName" class="form-control" />
+
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label asp-for="Email" class="control-label"></label>
+                            <input asp-for="Email" type="email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label asp-for="Password" class="control-label"></label>
+                            <input asp-for="Password" type="password" class="form-control" />
+                            <span asp-validation-for="Password" class="text-danger"></span>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label asp-for="OrganizationName" class="control-label"></label>
+                            <input asp-for="OrganizationName" class="form-control" />
+
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label asp-for="OrganizationPhone" class="control-label"></label>
+                            <input asp-for="OrganizationPhone" class="form-control" />
+
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label asp-for="OrganizationAddress" class="control-label"></label>
+                            <input asp-for="OrganizationAddress" class="form-control" />
+
+                        </div>
+                    </div>
+                    <input type="submit" value="Register" class="btn btn-sm btn-success text-uppercase rounded-0" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div> 
