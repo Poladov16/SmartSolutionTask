@@ -16,10 +16,10 @@ namespace SmartSTask.Models
 
         public int OrganizationId { get; set; }
 
-        public Organization Organization { get; set; }
+        public virtual Organization Organization { get; set; }
 
         public int? TaskId { get; set; }
 
-        public ManageTask Task { get; set; }
+        public virtual ManageTask Task { get; set; }
     }
 }
